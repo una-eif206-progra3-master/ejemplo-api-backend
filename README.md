@@ -89,7 +89,7 @@ public class Id {
 
 ## Consumir el API
 
-Para consimir el API es necesario consumirlo utilizando Spring Boot y no Jersy para no mezclar dependencias de dos librerías que hacen lo mismo.
+Para consumir el API es **<u>necesario utilizar Spring Boot y NO Jersy</u>** para no mezclar dependencias de dos librerías que hacen lo mismo.
 
 El `RestTemplate` es un elemento de Spring que sirve para consumir servicios, muy similar y mas sencillo al `client`de Jersy. 
 
