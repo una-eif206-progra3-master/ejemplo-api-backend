@@ -25,6 +25,7 @@ import cr.una.ejemplo.service.StudentService;
 import cr.una.ejemplo.service.StudentServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -47,4 +48,14 @@ public class StudentController {
         studentList = studentService.findAll();
         return studentList;
     }
+
+    @GetMapping("{course}")
+    @ResponseBody
+    public List<Student> findByCourse(@PathVariable String course) {
+        List<Student> studentList = null;
+        studentList = studentService.findByCourse(course);
+        return studentList;
+    }
+
+
 }

@@ -57,4 +57,20 @@ public class StudentDAOImpl implements StudentDAO {
         return studentList;
     }
 
+    /**
+     * Find all student from External API depending of the course name
+     *
+     * @param course
+     * @return the list of Students
+     */
+    @Override
+    public List<Student> findByCourse(String course) {
+        List<Student> studentList = null;
+        String query = "{\"course\": \"" + course + "\"}";
+        String URL = REST_URI + "&q={query}";
+        RestTemplate restTemplate = new RestTemplate();
+        studentList = Arrays.asList(restTemplate.getForObject(URL, Student[].class, query));
+
+        return studentList;    }
+
 }

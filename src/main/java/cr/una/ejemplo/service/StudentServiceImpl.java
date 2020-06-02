@@ -48,4 +48,18 @@ public class StudentServiceImpl implements StudentService {
         listStudents = studentDAO.findAll();
         return listStudents;
     }
+
+    /**
+     * Find all student from External API depending of the course name
+     *
+     * @param course
+     * @return the list of Students
+     */
+    @Override
+    public List<Student> findByCourse(String course) {
+        List<Student> listStudents = null;
+        studentDAO = new StudentDAOImpl();
+        listStudents = studentDAO.findByCourse(course);
+        return listStudents;
+    }
 }

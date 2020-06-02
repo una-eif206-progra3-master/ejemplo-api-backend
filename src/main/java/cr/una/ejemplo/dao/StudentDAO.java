@@ -35,4 +35,10 @@ public interface StudentDAO {
      * @return the list of Students
      */
     List<Student> findAll();
+
+    /**
+     * Find all student from External API depending of the course name
+     * @return the list of Students
+     */
+    List<Student> findByCourse(String course);
 }
